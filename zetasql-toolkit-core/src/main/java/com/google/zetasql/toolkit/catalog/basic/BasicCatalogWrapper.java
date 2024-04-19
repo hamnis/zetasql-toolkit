@@ -32,7 +32,6 @@ import com.google.zetasql.toolkit.catalog.TVFInfo;
 import com.google.zetasql.toolkit.catalog.exceptions.CatalogException;
 import com.google.zetasql.toolkit.catalog.exceptions.CatalogResourceAlreadyExists;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Basic implementation of CatalogWrapper which does not implement the semantics of any particular
@@ -132,27 +131,6 @@ public class BasicCatalogWrapper implements CatalogWrapper {
   @Override
   public void removeProcedure(String procedure) {
     CatalogOperations.deleteProcedureFromCatalog(this.catalog, procedure);
-  }
-
-  @Override
-  public void addTables(List<String> tables) {
-    throw new UnsupportedOperationException("The BasicCatalogWrapper cannot add tables by name");
-  }
-
-  @Override
-  public void addFunctions(List<String> functions) {
-    throw new UnsupportedOperationException("The BasicCatalogWrapper cannot add functions by name");
-  }
-
-  @Override
-  public void addTVFs(List<String> functions) {
-    throw new UnsupportedOperationException("The BasicCatalogWrapper cannot add TVFs by name");
-  }
-
-  @Override
-  public void addProcedures(List<String> procedures) {
-    throw new UnsupportedOperationException(
-        "The BasicCatalogWrapper cannot add procedures by name");
   }
 
   @Override
